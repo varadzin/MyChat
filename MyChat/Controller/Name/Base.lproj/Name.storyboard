@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j6n-ly-In3">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Sef-aU-kLr">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="j6n-ly-In3" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ljS-26-R1Q">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="E0P-6a-Fl4" kind="relationship" relationship="rootViewController" id="PAD-Gm-VYn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgQ-7P-RY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-878" y="47"/>
+        </scene>
+        <!--Name View Controller-->
+        <scene sceneID="FLb-TH-J0d">
+            <objects>
+                <viewController id="E0P-6a-Fl4" customClass="NameViewController" customModule="MyChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q2Q-sx-BGL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyChat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60U-eq-3Ke" userLabel="lblTitle">
+                                <rect key="frame" x="161" y="74" width="92.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KMR-qO-lyq" userLabel="txtInput">
+                                <rect key="frame" x="20" y="134" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="E0P-6a-Fl4" id="OrK-Ho-xm8"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6w-4k-4jP" userLabel="btnEntry">
+                                <rect key="frame" x="159" y="218" width="96" height="54"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <state key="normal" title="Vstup">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="goAction" destination="E0P-6a-Fl4" eventType="touchUpInside" id="oY8-si-pFQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="hju-xj-JEI" firstAttribute="trailing" secondItem="KMR-qO-lyq" secondAttribute="trailing" constant="20" id="0dD-0e-t8A"/>
+                            <constraint firstItem="60U-eq-3Ke" firstAttribute="centerX" secondItem="hju-xj-JEI" secondAttribute="centerX" id="3cB-lc-VwV"/>
+                            <constraint firstItem="60U-eq-3Ke" firstAttribute="top" secondItem="hju-xj-JEI" secondAttribute="top" constant="30" id="8wM-Wq-8n1"/>
+                            <constraint firstItem="r6w-4k-4jP" firstAttribute="centerX" secondItem="hju-xj-JEI" secondAttribute="centerX" id="JNz-Be-tND"/>
+                            <constraint firstItem="r6w-4k-4jP" firstAttribute="top" secondItem="KMR-qO-lyq" secondAttribute="bottom" constant="50" id="e1l-9e-zty"/>
+                            <constraint firstItem="KMR-qO-lyq" firstAttribute="top" secondItem="60U-eq-3Ke" secondAttribute="bottom" constant="30" id="gHv-ef-z5S"/>
+                            <constraint firstItem="KMR-qO-lyq" firstAttribute="leading" secondItem="hju-xj-JEI" secondAttribute="leading" constant="20" id="rtR-dN-wTn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hju-xj-JEI"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="D8N-h8-ShX" appends="YES" id="fJS-6m-CoH"/>
+                            <outletCollection property="gestureRecognizers" destination="Vq1-ao-doE" appends="YES" id="coG-Xk-zZ1"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="FJb-4A-hw8"/>
+                    <connections>
+                        <outlet property="txtInput" destination="KMR-qO-lyq" id="xyk-Fl-Ber"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JhJ-OH-ZiQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="D8N-h8-ShX">
+                    <connections>
+                        <action selector="changeBackground" destination="E0P-6a-Fl4" id="jMP-hh-dMs"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Vq1-ao-doE">
+                    <connections>
+                        <action selector="hideKeyboard" destination="E0P-6a-Fl4" id="tIi-Eb-5Uw"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="15.942028985507248" y="46.875"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="akG-yU-9ss">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="B2z-R6-6fy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYD-zZ-Wmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="29"/>
+        </scene>
+    </scenes>
+</document>
